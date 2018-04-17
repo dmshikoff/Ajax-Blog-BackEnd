@@ -8,6 +8,8 @@ app.use(cors())
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 
+app.use('/posts', require('./routes/post'))
+
 app.use(function(req, res, next){
     next({status: 404, message: 'Route not found' })
   })
